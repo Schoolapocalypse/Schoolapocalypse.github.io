@@ -1,9 +1,22 @@
 <html>
   <head>
     <title>My page title</title>
+    <style>
+#zombie_map {
+    height: 100%;
+    width: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    background-color: grey;
+}
+</style>
   </head>
+  <script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCmDHcTqk6fpNTgyU5Tey_ikTsoyTcnGl4&callback=initMap">
+</script>
   <body>
-  <dive>
+  <div>
   My zombie map
 <div id="zombie_map"></div>
     Items I want to appear on my page will go here
@@ -23,13 +36,3 @@
 </script>
   </body>
 </html>
-<style>
-#zombie_map {
-    height: 100%;
-    width: 100%;
-    left: 0;
-    position: absolute;
-    top: 0;
-    background-color: grey;
-}
-</style>
