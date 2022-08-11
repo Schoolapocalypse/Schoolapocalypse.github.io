@@ -27,12 +27,13 @@
     var zombie_map;
       data
       animal
-      var animal = "cat";
+    var animal = "cat";
       score
-      var score = 30;
+    var score = 30;
       
     var data = '-37.672393 145.028626 Zombie1.png
-    -37.672631 145.028733
+    -37.672631 145.028733 Zombie2.png';
+    var markers = data.split("\n");
     function initMap() {
 
             zombie_map = new google.maps.Map(document.getElementById('zombie_map'), {
