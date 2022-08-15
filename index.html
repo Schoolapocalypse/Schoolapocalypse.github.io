@@ -35,12 +35,17 @@
      
       
     function initMap() {
-            zombie_map = new google.maps.Map(document.getElementById('zombie_map'), {
+      //create map
+      zombie_map = new google.maps.Map(document.getElementById('zombie_map'), {
             zoom: 18,
             center: {lat: -37.671837, lng: 145.029256}
         });
+      //set up geolocation
+      
+      
+      //place markers
      for(var i=0; markers.length; i++){
-     var marker_data = markers[i].trim;
+     var marker_data = markers[i].trim();
      marker_data = marker_data.split(" ");
      var latitude = marker_data[0];
      var longitude = 1;
