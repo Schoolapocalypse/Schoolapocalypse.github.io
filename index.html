@@ -39,35 +39,46 @@
       zombie_map = new google.maps.Map(document.getElementById('zombie_map'), {
             zoom: 18,
             center: {lat: -37.671837, lng: 145.029256}
-        });
+      });
       if(navigator.geolocation) {
         navigator.geolocation.watchPosition(set_my_position);
       }
       else {
         alert("Geolocation doesn't work in your browser");
       }
-      set_my_position
       
-      function zombie_map(){
-      var pos = new google.maps.LatLng(-37.672631, 145.028733);
-      }
-      zombie_map();
+      
+      
+      //function zombie_map(){
+      //var pos = new google.maps.LatLng(-37.672631, 145.028733);
+      
+      //zombie_map();
       //place markers
      for(var i=0; markers.length; i++){
      var marker_data = markers[i].trim();
      marker_data = marker_data.split(" ");
      var latitude = marker_data[0];
-     var longitude = 1;
-     var emoji = 2;
-     new google.maps.Map
+     var longitude = marker_data[1];
+     var emoji = marker_data[2];
+     var marker_position = new google.maps.LatLng(latitude,longitude);
      var marker = new google.maps.Marker({
-     position: {lat: -37.671837, lng: 145.029256},
-     map: zombie_map
+     position: marker_position,
+     map: zombie_map,
+       icon: emoji
 });
        all_markers.push(marker);
      };
       
     }
+      function set_my_position(position) {
+      var pos = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+        var player_emoji = "https://cdn.glitch.global/7aa0d2ef-d063-42ad-87de-86cf4db6de0a/player.png?v=1659571395440";
+        var marker = new google.maps.Marker ({
+          position: pos,
+          map: zombie_map,
+          icon: player_emoji
+        });
+      }
 </script>
   </body>
 </html>
