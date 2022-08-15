@@ -58,8 +58,11 @@
      var marker_data = markers[i].trim();
      marker_data = marker_data.split(" ");
      var latitude = marker_data[0];
+       console.log(latitude);
      var longitude = marker_data[1];
+       console.log(longitude)
      var emoji = marker_data[2];
+       console.log(emoji)
      var marker_position = new google.maps.LatLng(latitude,longitude);
      var marker = new google.maps.Marker({
      position: marker_position,
