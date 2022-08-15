@@ -40,9 +40,18 @@
             zoom: 18,
             center: {lat: -37.671837, lng: 145.029256}
         });
-      ///set up geolocation
+      if(navigator.geolocation) {
+        navigator.geolocation.watchPosition(set_my_position);
+      }
+      else {
+        alert("Geolocation doesn't work in your browser");
+      }
+      set_my_position
       
-      
+      function zombie_map(){
+      var pos = new google.maps.LatLng(-37.672631, 145.028733);
+      }
+      zombie_map();
       //place markers
      for(var i=0; markers.length; i++){
      var marker_data = markers[i].trim();
