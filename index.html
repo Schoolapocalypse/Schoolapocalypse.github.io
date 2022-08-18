@@ -31,16 +31,27 @@
     -37.672631 145.028733 Zombie2.png`;
     var markers = data.split("\n");
     var zombie_map;
-      var all_markers = [];
+    old_position
+     var all_markers = [];
+     var old_position;
+      old_position = new google.maps.Markers({
+        position: {lat: -37.671441, lng: 145.029383 },
+        map: zombie_map,
+        icon: player_emoji,
+        title: "Zombie"
+        });
+      
     function initMap() {
       ////create map
       zombie_map = new google.maps.Map(document.getElementById('zombie_map'), {
             zoom: 18,
             center: {lat: -37.671837, lng: 145.029256}
       });
+      
       if(navigator.geolocation) {
         navigator.geolocation.watchPosition(set_my_position);
       }
+      
       else {
         alert("Geolocation doesn't work in your browser");
       }
