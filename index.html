@@ -31,8 +31,9 @@
     -37.672631 145.028733 Zombie2.png`;
     var markers = data.split("\n");
     var zombie_map;
-    old_position
+      
      var all_markers = [];
+      
      var old_position;
       old_position = new google.maps.Markers({
         position: {lat: -37.671441, lng: 145.029383 },
@@ -40,6 +41,8 @@
         icon: player_emoji,
         title: "Zombie"
         });
+      
+      var tolerance = 
       
     function initMap() {
       ////create map
