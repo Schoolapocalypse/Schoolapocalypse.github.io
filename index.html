@@ -14,7 +14,8 @@
 </style>
   </head>
   <script async defer
-  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCmDHcTqk6fpNTgyU5Tey_ikTsoyTcnGl4&callback=initMap">
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCmDHcTqk6fpNTgyU5Tey_ikTsoyTcnGl4&callback=initMap&libraries=geometry">
+    
 </script>
   <body>
   <div>
@@ -42,7 +43,7 @@
         title: "Zombie"
         });
       
-     // var tolerance = 
+     var tolerance = 10
       
     function initMap() {
       ////create map
@@ -93,6 +94,15 @@
           map: zombie_map,
           icon: player_emoji
         });
+       old_position = marker;
+        
+        for (var i=0; i < all_markers.length; i++) {
+        var distance = google.maps.geometry.spherical.computeDistanceBetween(pos, all_markers[i].getPosition());
+        if( distance < tolerance ){
+          var what_found = all_markers[i].getTitle();
+          alert("Found it! " + what_found);
+          all_markers[i].setMap(null);
+          
       }
 </script>
   </body>
