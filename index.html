@@ -29,7 +29,14 @@
       
     var data = `-37.672393 145.028626 Zombie1.png
     -37.671263 145.029561 Grath.png
-    -37.672631 145.028733 Zombie2.png`;
+    -37.672631 145.028733 Zombie2.png
+    -37.67316142690555 145.0304366730555 Z3.png
+    -37.671037 145.028344 Z4.png
+    -37.672407383654054 145.02988917777756 Z5.png
+    -37.66042678959454 145.03055334466936 Z6.png
+    -37.671862160311875 145.03075159348316 Z7.png
+    -37.66984952625927 145.0315930500571 Z8.png
+    -37.665647083461735 145.03219044295648 Z9.png`;
     var markers = data.split("\n");
     var zombie_map;
       
@@ -102,7 +109,7 @@
           var what_found = all_markers[i].getTitle();
           alert("Found it! " + what_found);
           all_markers[i].setMap(null);
-            if (what_found in ('Zombie1','Grath','Zombie2')) {
+            if (what_found in ('Zombie1','Grath','Zombie2','Z3','Z4','Z5','Z6','Z7','Z8','Z9')) {
             score += 10;
           }
           else {
