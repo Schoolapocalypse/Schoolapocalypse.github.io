@@ -58,6 +58,12 @@
             zoom: 18,
             center: {lat: -37.671837, lng: 145.029256}
       });
+      old_position = new google.maps.Marker({
+          position: {lat: -37.672162, lng: 145.029302 },
+          map: zombie_map,
+          icon: player_emoji,
+          title: "Zombie"
+          }); 
       
       if(navigator.geolocation) {
         navigator.geolocation.watchPosition(set_my_position);
