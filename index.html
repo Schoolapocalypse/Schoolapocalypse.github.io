@@ -94,6 +94,7 @@
       
     }
       function set_my_position(position) {
+         old_position.setMap(null);
       var pos = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
         var player_emoji = "https://cdn.glitch.global/7aa0d2ef-d063-42ad-87de-86cf4db6de0a/player.png?v=1659571395440";
         var marker = new google.maps.Marker ({
